@@ -12,24 +12,53 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <style>
+      .training-card { border-left:4px solid #39c; background:#f8fbfd; border-radius:0 6px 6px 0; padding:14px 18px; margin-bottom:18px; }
+      .training-card.appsec { border-left-color:#e67e22; background:#fffaf5; }
+      .training-card h3 { margin:0 0 6px; font-size:16px; }
+      .training-card ul { margin:6px 0 0; }
+      .section-accent { border-bottom:2px solid #39c; padding-bottom:4px; display:inline-block; margin-top:24px; }
+      .section-accent.appsec-title { border-bottom-color:#e67e22; }
+      .tag { display:inline-block; background:#e8f4f8; color:#1a6a8a; border-radius:3px; padding:1px 6px; font-size:11px; font-weight:600; margin-right:4px; }
+      .tag.appsec { background:#fdebd0; color:#b7490a; }
+    </style>
   </head>
   <body>
     <div class="wrapper">
       <header>
         <h1><a href="https://ajay19925.github.io/">Ajay Balaji's Website</a></h1>
         <img src="/assets/image/PHOTO.jpg" alt="Logo">
-        <p>This site serves as the personal page of Ajay Balaji, an Senior Software Engineer at Gartner, Cybersercurity Student at New york university </p>
+        <p>Senior Security Engineer at Gartner &amp; NYU MS Cybersecurity</p>
         <p><a href="/projects"> Projects</a></p>
         <p><a href="/certifications"> Certifications</a></p>
         <p><a href="/training"> Professional Training</a></p>
         <p><a href="/assignments"> Assignments </a></p>
-
       </header>
       <section>
-        <h1>Professional Trainings</h1>
-        <p>Below are the some of the tools and trainings which I used while exploring cybersecurity field</p>
-        <ul>
-        <li><h3>Burp Suite</h3>
+        <h1>Professional Training &amp; Skills</h1>
+        <p>Tools, technologies, and applied skills developed across my NYU master's program and professional AppSec work at Gartner.</p>
+
+        <h2 class="section-accent appsec-title">Application Security (Current Role)</h2>
+
+        <div class="training-card appsec">
+          <h3>Bug Bounty &amp; Vulnerability Disclosure Program (VDP) <span class="tag appsec">AppSec</span></h3>
+          <p>Full ownership of Gartner's managed private bug bounty program and VDP. Responsibilities include triage, validation, researcher communication, severity scoring (CVSS), and coordinating remediation with engineering teams.</p>
+        </div>
+
+        <div class="training-card appsec">
+          <h3>AppSec Automation &amp; Tooling <span class="tag appsec">AppSec</span></h3>
+          <p>End-to-end in-house secret scanning pipeline (AWS Lambda + TruffleHog v3 + AI-driven false-positive filtering + PostgreSQL). Snyk automation projects for vulnerability workflow management and ticketing. AI-powered threat modeling framework and MCP-based developer tooling for self-service vulnerability remediation.</p>
+        </div>
+
+        <div class="training-card appsec">
+          <h3>SAST / DAST / WAF <span class="tag appsec">AppSec</span></h3>
+          <p>Static and dynamic application security testing across the organization using tools including Snyk, WhiteHat Sentinel, and other SAST/DAST platforms. WAF management and support for teams building new product features.</p>
+        </div>
+
+        <h2 class="section-accent">Penetration Testing &amp; Offensive Security</h2>
+
+        <div class="training-card">
+          <h3>Burp Suite <span class="tag">Web AppSec</span></h3>
           <p><strong>Description: </strong>Burp Suite is an integrated platform/graphical tool for performing security testing of web applications.The web browser's built-in dev console is a great method for quickly viewing and tweaking source code in an HTTP request. However, if you are wanting to do hundreds of complex attack iterations against an application then it'll save you a lot of time in the long run if you use a tool such as Burp. It's a good idea to understand and use both tools. Burp does have a little bit of a learning curve and initial setup time. I have experience in using burp suite to exploit below mentioned vulnerabilites in web application </p>
           <ul>
             <li>Insecure Direct Object References - Insecure Direct Object Reference is when code accesses a restricted resource based on user input, but fails to verify user's authorization to access that resource.</li>
@@ -38,44 +67,41 @@
             <li>Cross Site Scripting - It becomes possible when code puts user-supplied data in the response without sanitizing the data first.</li>
           </ul>
         
-        </li>
-        <li><h3>Capture the Flag (CTF)</h3>
-          <p><strong>Description: </strong> Capture the Flag (CTF) is a special kind of information security competitions. I have experience of solving 80+ CTF problems in different security aspects via <a href="https://ctf.codepath.com/index.php">site</a> which was developed by Meta. Some of the probelms includes SQL injection,IDOR,CSRF,Cross-Site Scripting,User Enumeration,Password hash,Insecure Cryptographic storage and Steganography</p>
-          
-        </li>
+        </div>
 
-        <li><h3>Cryptography</h3>
-          <p><strong>Description: </strong>The importance of Cryptography in all the digital communication is very crucial. I have gained very good understanding of how cryptography is used in web applications to transfer packets via TCP connection without being attacked by someone in the middle. I have very good understanding of hashing algorithms and how that can be used in web applications to protect passwords.</p>
-          
-        </li>
+        <div class="training-card">
+          <h3>Capture the Flag (CTF) <span class="tag">Offensive</span></h3>
+          <p>Solved 80+ CTF challenges on the Meta-developed CodePath CTF platform, covering SQL injection, IDOR, CSRF, XSS, user enumeration, password hashing, insecure cryptographic storage, and steganography.</p>
+        </div>
 
-      </li>
+        <div class="training-card">
+          <h3>Penetration Testing <span class="tag">Offensive</span></h3>
+          <p>Hands-on pentesting against controlled environments: set up a vulnerable WordPress instance, identified and exploited vulnerabilities, then extended to live target analysis. Completed a full engagement through the NYU course — environment setup, vuln identification, exploitation, risk scoring, and professional report writing.</p>
+          <p><a href="https://github.com/Ajay19925/CyberSecurity/tree/WordPress-Pentesting">WordPress pentesting repo</a> &nbsp;·&nbsp; <a href="https://github.com/Ajay19925/CyberSecurity/tree/Live_target_PenTesting">Live target repo</a> &nbsp;·&nbsp; <a href="https://ajay19925.github.io/assets/Report/Pentesting-Report-NBN.pdf">Pentesting report (PDF)</a></p>
+        </div>
 
-      <li><h3>Pentesting</h3>
-        <p><strong>Description: </strong>I gained good understanding of Pen-testing by setting up a older version wordpress site with vulnerabilities. </p>
-        <p>My work towards this can be found in my <a href="https://github.com/Ajay19925/CyberSecurity/tree/WordPress-Pentesting">github repository</a></p>
-        <p>I extended this work towards live site and analyzed few more vulnerabilities.</p>
-        <p>My work towards this can be found in my <a href="https://github.com/Ajay19925/CyberSecurity/tree/Live_target_PenTesting">github repository</a></p>
-        <p>Through pentesting course I gained good knowledge in how to setup a closed and safe environment to carry out pentesting, how to identify vulneraiblities in app or website or network or configuration, how to exploit vulnerabilities, how to score risk and how to write pentesting reports. My Pentesting Report can be found in this <a href="https://ajay19925.github.io/assets/Report/Pentesting-Report-NBN.pdf">pdf.</a></p>
-      </li>
+        <div class="training-card">
+          <h3>Kali Linux <span class="tag">Offensive</span></h3>
+          <p>Used extensively across pentesting projects and labs. Tools explored:</p>
+          <ul>
+            <li>SQLmap — automated SQL injection detection and exploitation</li>
+            <li>msfconsole (Metasploit Framework) — exploit development and delivery</li>
+            <li>Nmap — network discovery and port scanning</li>
+            <li>Wireshark — network traffic analysis</li>
+            <li>John the Ripper — password hash cracking</li>
+            <li>ExifTool — metadata extraction and steganography</li>
+            <li>Burp Suite — web application interception and testing</li>
+          </ul>
+        </div>
 
-      <li><h3>Kali Linux</h3>
-        <p><strong>Description: </strong>Kali Linux is a Debian-derived Linux distribution designed for digital forensics and penetration testing. I have used kali linux in many area's of my work and projects. Some of the tools which I have explored so far are as follows </p>
-        <ul>
-          <li>SQLmap</li>
-          <li>msfconsole</li>
-          <li>Burp Suite</li>
-          <li>Nmap</li>
-          <li>WireShark</li>
-          <li>John the Ripper</li>
-          <li>ExifTool</li>
-        </ul>
-      
-      </li>
+        <h2 class="section-accent">Cryptography &amp; Foundations</h2>
 
+        <div class="training-card">
+          <h3>Applied Cryptography <span class="tag">Foundations</span></h3>
+          <p>Strong understanding of how cryptography underpins secure web communication — TLS/SSL handshake, certificate chains, symmetric vs. asymmetric encryption, and hashing algorithms (SHA, bcrypt, Argon2) used for secure password storage in web applications.</p>
+        </div>
 
-
-       </section>
+      </section>
       <footer>
         Mail me at <a href="mailto:ajaybalajid@gmail.com">ajaybalajid@gmail.com </a><br>
         Connect with me on LinkedIn at <a href="https://www.linkedin.com/in/ajay-balaji-57b93a141/">Link</a>
