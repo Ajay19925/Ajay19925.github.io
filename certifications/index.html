@@ -11,60 +11,93 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <style>
+      .cert-card { border-left:4px solid #39c; background:#f8fbfd; border-radius:0 6px 6px 0; padding:14px 18px; margin-bottom:18px; }
+      .cert-card.featured { border-left-color:#e67e22; background:#fffaf5; }
+      .cert-card h3 { margin:0 0 2px; font-size:16px; }
+      .cert-card h5 { margin:0 0 8px; color:#777; font-weight:400; font-size:13px; }
+      .cert-card .cert-meta { font-size:12px; color:#888; margin-top:8px; }
+      .cert-card .cert-meta strong { color:#555; }
+      .badge-featured { display:inline-block; background:#e67e22; color:#fff; border-radius:3px; padding:1px 7px; font-size:11px; font-weight:700; margin-left:8px; vertical-align:middle; }
+      .section-accent { border-bottom:2px solid #39c; padding-bottom:4px; display:inline-block; }
+    </style>
   </head>
   <body>
     <div class="wrapper">
       <header>
-        <h1><a href="https://ajay19925.github.io/">Ajay Balaji's Website</a></h1>
+        <h1><a href="https://ajay19925.github.io/">Ajay Balaji’s Website</a></h1>
         <img src="/assets/image/PHOTO.jpg" alt="Logo">
-        <p>This site serves as the personal page of Ajay Balaji, an Senior Software Engineer at Gartner, Cybersercurity Student at New york university </p>
+        <p>Senior Security Engineer at Gartner &amp; NYU MS Cybersecurity</p>
         <p><a href="/projects"> Projects</a></p>
         <p><a href="/certifications"> Certifications</a></p>
         <p><a href="/training"> Professional Training</a></p>
         <p><a href="/assignments"> Assignments </a></p>
-
       </header>
       <section>
-        <h2>Certifications</h2>
+        <h2 class="section-accent">Certifications</h2>
 
-        <p>Below are the certifications, I have completed so far since I have started my Masters degree. All the below Certifications are taken in addition to the degree courses to enchance my skills towards Cybersecurity field</p>
-        <ul>
-        <li><h3>CODEPATH CYBERSECURITY COURSE </h3>
-          <h5>From <a href="https://www.codepath.org/courses/cybersecurity">CodePath.org</a></h5>
-          <p><strong>Description: </strong>The Cybersecurity course focuses on teaching students the fundamentals of web application security with the aim of providing a foundational level of knowledge matched with offensive and defensive skills developed through hands on experience. Students will learn the basics of cybersecurity and common vulnerabilities and attacks, receiving hands on practice in both exploitation techniques and strategies for protecting and hardening applications. The course introduces a wide range of topics via a combination of sessions, videos, projects, and labs, giving students both a thorough grounding in the details of cybersecurity and an introduction to the broader landscape of information security.</p>
-          
-          <p>Completed on: May 2022</p></li>
-          <li><h3>Continuous Security Validation Pro</h3>
-            <h5>From <a href="https://cymulate.com/ecademy">Cymulate</a></h5>
-          
-            <p><strong>Description: </strong>This course includes modules and challenges from two Cymulate Security Validation Courses: 1. Building an Effective Offensive Security Program and 2. Understanding Offensive Security – Hands On.</p>
-            <p>These two courses give you the fundamental understanding and practice of building an effective offensive strategy within your enterprise. Work through a series of academic and hands on modules to complete this path.</p>
-            
-            <p>Completed on: Aug 2022</p></li>
+        <p>Industry certifications and NYU Cyber Fellows badges earned alongside my master’s program and professional work.</p>
 
-            <li><h3>Third Party Risk Managemento</h3>
-              <h5>From <a href="https://academy.securityscorecard.com/third-party-risk-management">SecurityScorecard</a></h5>
-            
-              <p><strong>Description: </strong>I have learned below items from the course</p>
-              <ul>
-                <li>The current state of third party risk                
-                </li>
-                <li>How other organizations are running their TPRM programs</li>
-                <li>A step-by-step process for setting up a TPRM program</li>
-                </ul>
-              
-              <p>Completed on: Aug 2022</p></li>
+        <div class="cert-card featured">
+          <h3>GIAC Web Application Penetration Tester (GWAPT) <span class="badge-featured">NEW</span></h3>
+          <h5>GIAC Certifications</h5>
+          <p>Industry-recognized certification validating skills in web application penetration testing — covering reconnaissance, exploitation of web vulnerabilities, and professional reporting.</p>
+          <p class="cert-meta"><strong>Issued:</strong> February 2026 &nbsp;·&nbsp; <strong>Expires:</strong> February 2030</p>
+        </div>
 
-              <li><h3>Digital Cyber Academy with Immersive Labs</h3>
-                <h5>From <a href="https://www.immersivelabs.com/digital-cyber-academies/">Immersive Labs Platform</a></h5>
-              
-                <p><strong>Description: </strong>I have completed more than 120 labs from ‘immersive lab’ platform to secure hands-on experience in different areas of cybersecurity field </p>
-                <p>Please click the <a href="https://ajay19925.github.io/assets/Report/Activity-Report.pdf">link</a> to download my activity report in immersive lab platform.</p>
-                
-                <p>Completed on: Jul 2022</p></li>
+        <div class="cert-card">
+          <h3>Master of Science in Cybersecurity</h3>
+          <h5>New York University</h5>
+          <p>Graduate degree focused on application security, network security, cryptography, digital forensics, and penetration testing. GPA: 3.8/4.</p>
+          <p class="cert-meta"><strong>Issued:</strong> January 2024</p>
+        </div>
 
-              
-      </ul>
+        <div class="cert-card">
+          <h3>Digital Cyber Academy with Immersive Labs</h3>
+          <h5>NYU Tandon School of Engineering &amp; Immersive Labs</h5>
+          <p>Completed 120+ hands-on labs across diverse cybersecurity domains on the Immersive Labs platform. <a href="https://ajay19925.github.io/assets/Report/Activity-Report.pdf">Download activity report.</a></p>
+          <p class="cert-meta"><strong>Issued:</strong> July 2022</p>
+        </div>
+
+        <div class="cert-card">
+          <h3>Continuous Security Validation Pro</h3>
+          <h5>NYU Tandon School of Engineering / Cymulate</h5>
+          <p>Covered building an effective offensive security program and hands-on offensive security techniques through Cymulate’s platform.</p>
+          <p class="cert-meta"><strong>Issued:</strong> August 2022</p>
+        </div>
+
+        <div class="cert-card">
+          <h3>Third Party Risk Management</h3>
+          <h5>SecurityScorecard</h5>
+          <p>Learned current state of TPRM, how organizations run TPRM programs, and a step-by-step process for establishing a program.</p>
+          <p class="cert-meta"><strong>Issued:</strong> August 2022</p>
+        </div>
+
+        <div class="cert-card">
+          <h3>Security in Google Cloud</h3>
+          <h5>NYU Tandon School of Engineering / Google Cloud</h5>
+          <p class="cert-meta"><strong>Issued:</strong> January 2022</p>
+        </div>
+
+        <div class="cert-card">
+          <h3>CODEPATH Cybersecurity Course</h3>
+          <h5><a href="https://www.codepath.org/courses/cybersecurity">CodePath.org</a></h5>
+          <p>Foundational web application security course covering common vulnerabilities, exploitation techniques, and defensive hardening — with hands-on labs and CTF challenges.</p>
+          <p class="cert-meta"><strong>Issued:</strong> May 2022</p>
+        </div>
+
+        <div class="cert-card">
+          <h3>Microsoft Certified: Azure Fundamentals</h3>
+          <h5>Microsoft</h5>
+          <p class="cert-meta"><strong>Issued:</strong> December 2020</p>
+        </div>
+
+        <div class="cert-card">
+          <h3>Professional Scrum Master™ I (PSM I)</h3>
+          <h5>Scrum.org</h5>
+          <p class="cert-meta"><strong>Issued:</strong> October 2019</p>
+        </div>
+
       </section>
       <footer>
         Mail me at <a href="mailto:ajaybalajid@gmail.com">ajaybalajid@gmail.com </a><br>
