@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GANI DENTAL LAB</title>
+  <meta name="description" content="GANI Dental Lab, Madurai — precision-crafted dental prosthetics since 2002, trusted by dental professionals for two decades." />
+  <link rel="icon" type="image/png" href="assets/images/gani-mark.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#9e1b1b',
+            'primary-dark': '#6e1212',
+            accent: '#c0392b',
+            surface: '#fdf3f2',
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- AOS — Animate on Scroll -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+    /* Navbar scroll shadow */
+    #navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+
+    /* Hero gradient overlay */
+    .hero-overlay {
+      background: linear-gradient(135deg, rgba(60,10,10,0.93) 0%, rgba(90,15,15,0.88) 50%, rgba(50,8,8,0.85) 100%);
+    }
+
+    /* Service card hover */
+    .service-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(158,27,27,0.15); }
+
+    /* Team card */
+    .team-card img { transition: transform 0.3s ease; }
+    .team-card:hover img { transform: scale(1.05); }
+
+    /* Gallery grid */
+    .gallery-item { overflow: hidden; cursor: pointer; }
+    .gallery-item img { transition: transform 0.4s ease; width: 100%; height: 100%; object-fit: cover; }
+    .gallery-item:hover img { transform: scale(1.08); }
+
+    /* Lightbox */
+    #lightbox { backdrop-filter: blur(6px); }
+
+    /* Stat counter */
+    .stat-num { font-family: 'Playfair Display', serif; }
+
+    /* Section divider wave */
+    .wave-top { margin-top: -2px; }
+
+    /* Hide native details arrow */
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 font-body">
+
+<!-- ═══════════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════════ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-2 group">
+        <img src="assets/images/gani-mark.png" alt="GANI Dental Lab" class="h-11 w-auto" />
+        <span class="text-xl font-display font-700 text-primary">GANI <span class="text-gray-400 font-light text-base">DENTAL LAB</span></span>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="#lab" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Services</a>
+        <a href="#about" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">About</a>
+        <a href="#gallery" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Gallery</a>
+        <a href="#contact" class="bg-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-primary-dark transition-colors">
+          Contact
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="nav-toggle" class="lg:hidden p-2 rounded-lg text-gray-600 hover:text-primary hover:bg-surface transition-colors" aria-label="Toggle menu">
+        <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 bg-white">
+    <div class="px-4 py-4 flex flex-col gap-3">
+      <a href="#lab" class="mobile-link py-2 text-gray-700 hover:text-primary font-medium transition-colors">Lab Services</a>
+      <a href="#about" class="mobile-link py-2 text-gray-700 hover:text-primary font-medium transition-colors">About</a>
+      <a href="#gallery" class="mobile-link py-2 text-gray-700 hover:text-primary font-medium transition-colors">Gallery</a>
+      <a href="#contact" class="mobile-link mt-2 bg-primary text-white text-center py-3 rounded-full font-semibold hover:bg-primary-dark transition-colors">Contact</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════ -->
+<section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background image -->
+  <img
+    src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1600&q=80"
+    alt="Dental lab craftsmanship"
+    class="absolute inset-0 w-full h-full object-cover object-center"
+  />
+  <!-- Gradient overlay -->
+  <div class="hero-overlay absolute inset-0"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-5xl mx-auto px-4 text-center text-white pt-20">
+    <p class="text-white/90 font-semibold tracking-widest text-sm uppercase mb-4" data-aos="fade-down">Welcome to GANI DENTAL LAB</p>
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 text-white" data-aos="fade-up" data-aos-delay="100">
+      Where Traditional Craftsmanship Meets Modern Dentistry
+    </h1>
+    <p class="text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+      Built on the trusted legacy of GANI Dental Lab since 2002. For over two decades, we've been a trusted partner to dental professionals, delivering restorations that combine precision, aesthetics, and reliability.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
+      <a href="#lab" class="bg-accent text-gray-900 font-semibold px-8 py-4 rounded-full hover:bg-white transition-colors text-base">
+        Our Services
+      </a>
+      <a href="#contact" class="border-2 border-white/60 text-white font-semibold px-8 py-4 rounded-full hover:bg-white/10 transition-colors text-base">
+        Contact Us
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 animate-bounce">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     LAB SERVICES
+════════════════════════════════════════════════════ -->
+<section id="lab" class="py-24 bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-16" data-aos="fade-up">
+      <span class="text-accent font-semibold tracking-widest text-sm uppercase">Professional Lab</span>
+      <h2 class="text-4xl lg:text-5xl font-display font-bold text-white mt-2 mb-4">Lab Services</h2>
+      <p class="text-gray-400 max-w-xl mx-auto">A full range of precision-crafted restorations — metal ceramic, zirconia, implants, splints, and more.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- METAL CERAMIC -->
+      <details class="service-card bg-gray-800 border border-gray-700 rounded-2xl hover:border-accent/50 group" data-aos="fade-up" data-aos-delay="0">
+        <summary class="p-8 flex items-center gap-4 cursor-pointer">
+          <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white flex-1">Metal Ceramic</h3>
+          <svg class="w-5 h-5 text-gray-500 shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="px-8 pb-8">
+          <div class="border-t border-gray-700 pt-4">
+            <ul class="space-y-2">
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Economic Ceramic</li>
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Regular Ceramic</li>
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Premium Ceramic</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- DMLS -->
+      <details class="service-card bg-gray-800 border border-gray-700 rounded-2xl hover:border-accent/50 group" data-aos="fade-up" data-aos-delay="80">
+        <summary class="p-8 flex items-center gap-4 cursor-pointer">
+          <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1 1 .03 2.798-1.414 2.798H4.212c-1.444 0-2.414-1.798-1.414-2.798L4.2 15.3"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white flex-1">DMLS</h3>
+          <svg class="w-5 h-5 text-gray-500 shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="px-8 pb-8">
+          <div class="border-t border-gray-700 pt-4">
+            <ul class="space-y-2">
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Regular Ceramic</li>
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Premium Ceramic</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- ZIRCONIA CAD/CAM -->
+      <details class="service-card bg-gray-800 border border-gray-700 rounded-2xl hover:border-accent/50 group" data-aos="fade-up" data-aos-delay="160">
+        <summary class="p-8 flex items-center gap-4 cursor-pointer">
+          <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-display font-semibold text-white leading-tight">Zirconia</h3>
+            <p class="text-accent/70 text-xs font-semibold uppercase tracking-wider mt-0.5">CAD / CAM</p>
+          </div>
+          <svg class="w-5 h-5 text-gray-500 shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="px-8 pb-8">
+          <div class="border-t border-gray-700 pt-4">
+            <ul class="space-y-2">
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Regular Zirconia</li>
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Premium Zirconia</li>
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Platinum Zirconia</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- MONOLITHIC ZIRCON -->
+      <details class="service-card bg-gray-800 border border-gray-700 rounded-2xl hover:border-accent/50 group" data-aos="fade-up" data-aos-delay="0">
+        <summary class="p-8 flex items-center gap-4 cursor-pointer">
+          <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white flex-1">Monolithic Zircon</h3>
+          <svg class="w-5 h-5 text-gray-500 shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="px-8 pb-8">
+          <div class="border-t border-gray-700 pt-4">
+            <ul class="space-y-2">
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Classic Monolith</li>
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Multilayer Monolith</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- IMPLANT -->
+      <details class="service-card bg-gray-800 border border-gray-700 rounded-2xl hover:border-accent/50 group sm:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="80">
+        <summary class="p-8 flex items-center gap-4 cursor-pointer">
+          <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white flex-1">Implant</h3>
+          <svg class="w-5 h-5 text-gray-500 shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="px-8 pb-8">
+          <div class="border-t border-gray-700 pt-4 space-y-4">
+            <div>
+              <p class="text-xs font-semibold text-accent/80 uppercase tracking-wider mb-2">Cement Retainer</p>
+              <ul class="space-y-1.5">
+                <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Regular PFM</li>
+                <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Premium PFM</li>
+                <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Regular Zirconia</li>
+                <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Premium Zirconia</li>
+              </ul>
+            </div>
+            <div class="border-t border-gray-700 pt-4">
+              <p class="text-xs font-semibold text-accent/80 uppercase tracking-wider mb-2">Screw Retainer</p>
+              <ul class="space-y-1.5">
+                <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Regular PFM</li>
+                <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Premium PFM</li>
+                <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Regular Zirconia</li>
+                <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Premium Zirconia</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- FULL METAL -->
+      <details class="service-card bg-gray-800 border border-gray-700 rounded-2xl hover:border-accent/50 group" data-aos="fade-up" data-aos-delay="0">
+        <summary class="p-8 flex items-center gap-4 cursor-pointer">
+          <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white flex-1">Full Metal</h3>
+          <svg class="w-5 h-5 text-gray-500 shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="px-8 pb-8">
+          <div class="border-t border-gray-700 pt-4">
+            <ul class="space-y-2">
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Full Metal (Regular)</li>
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Full Metal (DMLS)</li>
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Inlay / Onlay</li>
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Cast Post</li>
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Maryland</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- SPLINT -->
+      <details class="service-card bg-gray-800 border border-gray-700 rounded-2xl hover:border-accent/50 group" data-aos="fade-up" data-aos-delay="80">
+        <summary class="p-8 flex items-center gap-4 cursor-pointer">
+          <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white flex-1">Splint</h3>
+          <svg class="w-5 h-5 text-gray-500 shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="px-8 pb-8">
+          <div class="border-t border-gray-700 pt-4">
+            <ul class="space-y-2">
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Hard (per arch)</li>
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Soft (per arch)</li>
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Essix Retainer (1mm)</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- TEMPORARY CROWN -->
+      <details class="service-card bg-gray-800 border border-gray-700 rounded-2xl hover:border-accent/50 group" data-aos="fade-up" data-aos-delay="160">
+        <summary class="p-8 flex items-center gap-4 cursor-pointer">
+          <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white flex-1">Temporary Crown</h3>
+          <svg class="w-5 h-5 text-gray-500 shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="px-8 pb-8">
+          <div class="border-t border-gray-700 pt-4">
+            <ul class="space-y-2">
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>PMMA</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- MODEL PRINT -->
+      <details class="service-card bg-gray-800 border border-gray-700 rounded-2xl hover:border-accent/50 group" data-aos="fade-up" data-aos-delay="0">
+        <summary class="p-8 flex items-center gap-4 cursor-pointer">
+          <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white flex-1">Model Print</h3>
+          <svg class="w-5 h-5 text-gray-500 shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="px-8 pb-8">
+          <div class="border-t border-gray-700 pt-4">
+            <ul class="space-y-2">
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Half Arch</li>
+              <li class="text-gray-400 text-sm flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent/70 shrink-0"></span>Full Arch</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     ABOUT + STATS
+════════════════════════════════════════════════════ -->
+<section id="about" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-16 items-center max-w-3xl mx-auto">
+
+      <!-- Text + stats -->
+      <div data-aos="fade-right">
+        <span class="text-primary font-semibold tracking-widest text-sm uppercase">Our Story</span>
+        <h2 class="text-4xl lg:text-5xl font-display font-bold text-gray-900 mt-2 mb-6">Where Traditional Craftsmanship Meets Modern Dentistry</h2>
+        <p class="text-gray-500 leading-relaxed mb-4">
+          Built on the trusted legacy of GANI Dental Lab since 2002. For over two decades, GANI Dental Lab has been a trusted partner to dental professionals, delivering restorations that combine precision, aesthetics, and reliability.
+        </p>
+        <p class="text-gray-500 leading-relaxed mb-10">
+          Every case is treated with the same obsessive attention to detail. Our lab uses CAD/CAM milling, digital scanning, and hand-layering techniques to craft restorations indistinguishable from natural teeth.
+        </p>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-6">
+          <div class="text-center" data-aos="zoom-in" data-aos-delay="100">
+            <div class="text-4xl font-display font-bold text-primary">2002</div>
+            <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Est.</div>
+          </div>
+          <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
+            <div class="stat-num text-4xl font-display font-bold text-primary" data-target="20">0</div>
+            <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Years Experience</div>
+          </div>
+          <div class="text-center" data-aos="zoom-in" data-aos-delay="300">
+            <div class="stat-num text-4xl font-display font-bold text-primary" data-target="500">0</div>
+            <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Lab Cases / Year</div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     TEAM
+════════════════════════════════════════════════════ -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-16" data-aos="fade-up">
+      <span class="text-primary font-semibold tracking-widest text-sm uppercase">Meet The Experts</span>
+      <h2 class="text-4xl lg:text-5xl font-display font-bold text-gray-900 mt-2 mb-4">Our Team</h2>
+      <p class="text-gray-500 max-w-xl mx-auto">Dedicated professionals combining technical excellence with an unwavering passion for craftsmanship.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 max-w-4xl mx-auto">
+
+      <div class="team-card text-center" data-aos="fade-up" data-aos-delay="0">
+        <div class="w-36 h-36 mx-auto rounded-full overflow-hidden mb-5 ring-4 ring-accent/30">
+          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&q=80" alt="Dr. Priya Sharma" class="w-full h-full object-cover" />
+        </div>
+        <h3 class="text-xl font-display font-semibold">Dr. Priya Sharma</h3>
+        <p class="text-primary text-sm font-medium mt-1">Lead Dentist & Clinical Director</p>
+        <p class="text-gray-400 text-sm mt-3 leading-relaxed">BDS, MDS (Prosthodontics). 12 years of restorative and cosmetic expertise.</p>
+      </div>
+
+      <div class="team-card text-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="w-36 h-36 mx-auto rounded-full overflow-hidden mb-5 ring-4 ring-accent/30">
+          <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&q=80" alt="Dr. Arjun Mehta" class="w-full h-full object-cover" />
+        </div>
+        <h3 class="text-xl font-display font-semibold">Dr. Arjun Mehta</h3>
+        <p class="text-primary text-sm font-medium mt-1">Implantologist & Oral Surgeon</p>
+        <p class="text-gray-400 text-sm mt-3 leading-relaxed">BDS, Fellowship in Implantology. Specialist in full-arch and complex implant cases.</p>
+      </div>
+
+      <div class="team-card text-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-36 h-36 mx-auto rounded-full overflow-hidden mb-5 ring-4 ring-accent/30">
+          <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=300&q=80" alt="Kavya Nair" class="w-full h-full object-cover" />
+        </div>
+        <h3 class="text-xl font-display font-semibold">Kavya Nair</h3>
+        <p class="text-primary text-sm font-medium mt-1">Head Ceramist & Lab Director</p>
+        <p class="text-gray-400 text-sm mt-3 leading-relaxed">10 years in master ceramics. Specialist in layered zirconia and high-translucency prosthetics.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     GALLERY
+════════════════════════════════════════════════════ -->
+<section id="gallery" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-16" data-aos="fade-up">
+      <span class="text-primary font-semibold tracking-widest text-sm uppercase">Our Work</span>
+      <h2 class="text-4xl lg:text-5xl font-display font-bold text-gray-900 mt-2 mb-4">Our Gallery</h2>
+      <p class="text-gray-500 max-w-xl mx-auto">Real cases, real transformations. Click any image to view full size.</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="gallery-grid">
+      <div class="gallery-item rounded-2xl h-64 aspect-auto" data-aos="zoom-in" data-aos-delay="0" data-index="0">
+        <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=600&q=80" alt="Smile transformation 1" />
+      </div>
+      <div class="gallery-item rounded-2xl h-64" data-aos="zoom-in" data-aos-delay="60" data-index="1">
+        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80" alt="Dental veneers case" />
+      </div>
+      <div class="gallery-item rounded-2xl h-64" data-aos="zoom-in" data-aos-delay="120" data-index="2">
+        <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&q=80" alt="Implant case" />
+      </div>
+      <div class="gallery-item rounded-2xl h-64" data-aos="zoom-in" data-aos-delay="0" data-index="3">
+        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80" alt="Lab prosthetics" />
+      </div>
+      <div class="gallery-item rounded-2xl h-64" data-aos="zoom-in" data-aos-delay="60" data-index="4">
+        <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=600&q=80" alt="Whitening result" />
+      </div>
+      <div class="gallery-item rounded-2xl h-64" data-aos="zoom-in" data-aos-delay="120" data-index="5">
+        <img src="https://images.unsplash.com/photo-1563461660947-507ef49e9c47?w=600&q=80" alt="Orthodontics case" />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════════════════ -->
+<section id="contact" class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-16" data-aos="fade-up">
+      <span class="text-primary font-semibold tracking-widest text-sm uppercase">Get In Touch</span>
+      <h2 class="text-4xl lg:text-5xl font-display font-bold text-gray-900 mt-2 mb-4">Contact Us</h2>
+      <p class="text-gray-500 max-w-xl mx-auto">Fill in the form and our team will get back to you within 24 hours.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+      <!-- Form -->
+      <div data-aos="fade-right">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white rounded-3xl p-8 shadow-sm border border-red-100 space-y-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1.5">Full Name</label>
+              <input type="text" name="name" required placeholder="Dr. / Patient name"
+                class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors text-sm" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1.5">Phone</label>
+              <input type="tel" name="phone" required placeholder="+91 99439 20564"
+                class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors text-sm" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
+            <input type="email" name="email" required placeholder="you@example.com"
+              class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors text-sm" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1.5">Service Needed</label>
+            <select name="service"
+              class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors text-sm bg-white">
+                      <option value="">Select a service…</option>
+              <optgroup label="Metal Ceramic">
+                <option>Metal Ceramic — Economic</option>
+                <option>Metal Ceramic — Regular</option>
+                <option>Metal Ceramic — Premium</option>
+              </optgroup>
+              <optgroup label="DMLS">
+                <option>DMLS — Regular Ceramic</option>
+                <option>DMLS — Premium Ceramic</option>
+              </optgroup>
+              <optgroup label="Zirconia (CAD/CAM)">
+                <option>Zirconia — Regular</option>
+                <option>Zirconia — Premium</option>
+                <option>Zirconia — Platinum</option>
+              </optgroup>
+              <optgroup label="Monolithic Zircon">
+                <option>Monolithic — Classic</option>
+                <option>Monolithic — Multilayer</option>
+              </optgroup>
+              <optgroup label="Implant — Cement Retainer">
+                <option>Implant Cement — Regular PFM</option>
+                <option>Implant Cement — Premium PFM</option>
+                <option>Implant Cement — Regular Zirconia</option>
+                <option>Implant Cement — Premium Zirconia</option>
+              </optgroup>
+              <optgroup label="Implant — Screw Retainer">
+                <option>Implant Screw — Regular PFM</option>
+                <option>Implant Screw — Premium PFM</option>
+                <option>Implant Screw — Regular Zirconia</option>
+                <option>Implant Screw — Premium Zirconia</option>
+              </optgroup>
+              <optgroup label="Full Metal">
+                <option>Full Metal — Regular</option>
+                <option>Full Metal — DMLS</option>
+                <option>Inlay / Onlay</option>
+                <option>Cast Post</option>
+                <option>Maryland</option>
+              </optgroup>
+              <optgroup label="Splint">
+                <option>Splint — Hard (per arch)</option>
+                <option>Splint — Soft (per arch)</option>
+                <option>Essix Retainer (1mm)</option>
+              </optgroup>
+              <optgroup label="Other">
+                <option>Temporary Crown — PMMA</option>
+                <option>Model Print — Half Arch</option>
+                <option>Model Print — Full Arch</option>
+              </optgroup>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1.5">Message</label>
+            <textarea name="message" rows="4" placeholder="Briefly describe your concern or inquiry…"
+              class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors text-sm resize-none"></textarea>
+          </div>
+          <button type="submit"
+            class="w-full bg-primary text-white font-semibold py-4 rounded-xl hover:bg-primary-dark transition-colors text-sm tracking-wide">
+            Send Message
+          </button>
+          <p class="text-xs text-gray-400 text-center">We respond within 24 hours · No spam ever</p>
+        </form>
+      </div>
+
+      <!-- Info + Map -->
+      <div class="flex flex-col gap-8" data-aos="fade-left">
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div class="bg-white rounded-2xl p-5 border border-red-100 text-center">
+            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+              </svg>
+            </div>
+            <p class="text-xs text-gray-400 mb-1">Address</p>
+            <p class="text-sm font-medium text-gray-800">No.48, Vivekananda Nagar, 120 Feet Road, K.Pudur, Madurai - 625007</p>
+            <a href="https://maps.app.goo.gl/c77vVREDKeyVKk6p6?g_st=iw" target="_blank" rel="noopener" class="text-xs text-primary font-semibold mt-2 inline-block hover:underline">Get Directions</a>
+          </div>
+          <div class="bg-white rounded-2xl p-5 border border-red-100 text-center">
+            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
+              </svg>
+            </div>
+            <p class="text-xs text-gray-400 mb-1">Mobile</p>
+            <p class="text-sm font-medium text-gray-800">+91 99439 20564</p>
+            <p class="text-sm font-medium text-gray-800">+91 98430 99894</p>
+            <p class="text-xs text-gray-400 mb-1 mt-2">Office</p>
+            <p class="text-sm font-medium text-gray-800">+91 99655 32786</p>
+            <p class="text-sm font-medium text-gray-800">0452-4961414</p>
+          </div>
+          <div class="bg-white rounded-2xl p-5 border border-red-100 text-center">
+            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <p class="text-xs text-gray-400 mb-1">Hours</p>
+            <p class="text-sm font-medium text-gray-800">Mon–Sat 10:00 AM – 9:00 PM</p>
+            <p class="text-sm font-medium text-gray-800">Sunday: Holiday</p>
+          </div>
+        </div>
+
+        <!-- Google Maps embed -->
+        <div class="rounded-2xl overflow-hidden flex-1 min-h-64 border border-red-100 shadow-sm">
+          <iframe
+            src="https://www.google.com/maps?q=GANI+DENTAL+LAB+No.48+Vivekananda+Nagar+120+Feet+Road+K.Pudur+Madurai+625007&output=embed"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="GANI DENTAL LAB location">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════ -->
+<footer class="bg-gray-900 text-white py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-2 mb-4">
+          <img src="assets/images/gani-mark-light.png" alt="GANI Dental Lab" class="h-10 w-auto" />
+          <span class="text-xl font-display font-bold">GANI <span class="text-gray-400 font-light text-base">DENTAL LAB</span></span>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed max-w-xs">Where traditional craftsmanship meets modern dentistry. Your trusted dental lab partner since 2002.</p>
+        <!-- Social -->
+        <div class="flex gap-3 mt-5">
+          <a href="#" aria-label="Facebook" class="w-9 h-9 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="w-9 h-9 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" aria-label="WhatsApp" class="w-9 h-9 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick links -->
+      <div>
+        <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-300 mb-4">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm text-gray-400">
+          <li><a href="#lab" class="hover:text-accent transition-colors">Lab Services</a></li>
+          <li><a href="#about" class="hover:text-accent transition-colors">About Us</a></li>
+          <li><a href="#gallery" class="hover:text-accent transition-colors">Gallery</a></li>
+          <li><a href="#contact" class="hover:text-accent transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact info -->
+      <div>
+        <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-300 mb-4">Contact</h4>
+        <ul class="space-y-2.5 text-sm text-gray-400">
+          <li>No.48, Vivekananda Nagar</li>
+          <li>120 Feet Road, K.Pudur</li>
+          <li>Madurai - 625007</li>
+          <li class="pt-1"><a href="tel:+919943920564" class="hover:text-accent transition-colors">+91 99439 20564</a></li>
+          <li><a href="tel:+919843099894" class="hover:text-accent transition-colors">+91 98430 99894</a></li>
+          <li><a href="tel:+919965532786" class="hover:text-accent transition-colors">+91 99655 32786</a></li>
+          <li><a href="tel:+914524961414" class="hover:text-accent transition-colors">0452-4961414</a></li>
+          <li><a href="mailto:dentallab.gani@gmail.com" class="hover:text-accent transition-colors">dentallab.gani@gmail.com</a></li>
+          <li class="pt-1">Mon–Sat: 10am – 9pm</li>
+          <li>Sunday: Holiday</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-gray-500">
+      <p>&copy; 2026 GANI DENTAL LAB. All rights reserved.</p>
+      <p>Built for GitHub Pages · Hosted with <span class="text-accent">♥</span></p>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════════
+     LIGHTBOX
+════════════════════════════════════════════════════ -->
+<div id="lightbox" class="fixed inset-0 z-50 bg-black/90 hidden flex items-center justify-center p-4">
+  <button id="lb-close" aria-label="Close" class="absolute top-5 right-5 text-white hover:text-accent w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+  </button>
+  <button id="lb-prev" aria-label="Previous" class="absolute left-4 text-white hover:text-accent w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+  </button>
+  <img id="lb-img" src="" alt="" class="max-h-[85vh] max-w-[90vw] rounded-xl object-contain shadow-2xl" />
+  <button id="lb-next" aria-label="Next" class="absolute right-4 text-white hover:text-accent w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+  </button>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════════════ -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // Init AOS
+  AOS.init({ duration: 700, once: false, offset: 60 });
+
+  // Navbar scroll shadow
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Mobile nav toggle
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden', !open);
+    iconClose.classList.toggle('hidden', open);
+  });
+
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    });
+  });
+
+  // Stat counters (IntersectionObserver)
+  const stats = document.querySelectorAll('.stat-num[data-target]');
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = +el.dataset.target;
+      const duration = 1800;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = Math.floor(current).toLocaleString() + '+';
+        if (current >= target) clearInterval(timer);
+      }, 16);
+      countObserver.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  stats.forEach(s => countObserver.observe(s));
+
+  // Gallery lightbox
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  let currentIndex = 0;
+
+  const images = Array.from(galleryItems).map(item => ({
+    src: item.querySelector('img').src,
+    alt: item.querySelector('img').alt,
+  }));
+
+  function showLightbox(index) {
+    currentIndex = (index + images.length) % images.length;
+    lbImg.src = images[currentIndex].src;
+    lbImg.alt = images[currentIndex].alt;
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  galleryItems.forEach((item, i) => item.addEventListener('click', () => showLightbox(i)));
+  document.getElementById('lb-close').addEventListener('click', closeLightbox);
+  document.getElementById('lb-prev').addEventListener('click', () => showLightbox(currentIndex - 1));
+  document.getElementById('lb-next').addEventListener('click', () => showLightbox(currentIndex + 1));
+
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showLightbox(currentIndex - 1);
+    if (e.key === 'ArrowRight') showLightbox(currentIndex + 1);
+  });
+</script>
+
+</body>
+</html>
