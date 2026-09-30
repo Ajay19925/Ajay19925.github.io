@@ -78,6 +78,31 @@
 
     /* Stat counter font */
     .stat-num { font-family: 'Playfair Display', serif; }
+
+    /* Scroll offset for fixed navbar anchors */
+    section[id], div[id="home"] {
+      scroll-margin-top: 72px;
+    }
+
+    /* Remove tap highlight on mobile */
+    a, button { -webkit-tap-highlight-color: transparent; }
+
+    /* Disable hover card lift on touch devices */
+    @media (hover: none) {
+      .service-card:hover {
+        transform: none;
+        box-shadow: none;
+        border-color: rgba(226, 232, 240, 0.9);
+      }
+      .gallery-item:hover img { transform: none; }
+      .leader-card:hover img { transform: none; }
+    }
+
+    /* Ensure form inputs are large enough on mobile (iOS zoom prevention) */
+    input, select, textarea { font-size: 16px !important; }
+    @media (min-width: 640px) {
+      input, select, textarea { font-size: 0.875rem !important; }
+    }
   </style>
 </head>
 
@@ -151,20 +176,20 @@
   <div class="hero-overlay absolute inset-0"></div>
 
   <!-- Content -->
-  <div class="relative z-10 max-w-5xl mx-auto px-4 text-center text-white pt-20">
+  <div class="relative z-10 max-w-5xl mx-auto px-4 text-center text-white pt-24 sm:pt-20">
     <p class="text-white/90 font-semibold tracking-widest text-xs sm:text-sm uppercase mb-4" data-aos="fade-down">
       Welcome to GANI DENTAL LAB
     </p>
     
-    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight mb-4 text-white" data-aos="fade-up" data-aos-delay="100">
+    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight mb-4 text-white" data-aos="fade-up" data-aos-delay="100">
       Where Traditional Craftsmanship Meets Modern Dentistry.
     </h1>
 
-    <p class="text-accent-light font-display italic text-lg sm:text-xl font-medium mb-6" data-aos="fade-up" data-aos-delay="150">
+    <p class="text-accent-light font-display italic text-base sm:text-xl font-medium mb-6" data-aos="fade-up" data-aos-delay="150">
       Crafted With Care • Since 2002
     </p>
 
-    <p class="text-base sm:text-lg text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed font-normal" data-aos="fade-up" data-aos-delay="200">
+    <p class="text-sm sm:text-lg text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed font-normal" data-aos="fade-up" data-aos-delay="200">
       Built on the trusted legacy of GANI Dental Lab since 2002, For over two decades, GANI Dental Lab has been a trusted partner to dental professionals, delivering restorations that combine precision, aesthetics, and reliability.
     </p>
 
@@ -190,14 +215,14 @@
 <!-- ═══════════════════════════════════════════════════
      SERVICES (CLEAN, ELEGANT & BRIGHT DESIGN)
 ════════════════════════════════════════════════════ -->
-<section id="lab" class="py-24 bg-slate-50 border-y border-slate-200/70">
+<section id="lab" class="py-14 md:py-24 bg-slate-50 border-y border-slate-200/70">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <div class="text-center mb-16" data-aos="fade-up">
+    <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
       <span class="text-accent font-semibold tracking-widest text-xs uppercase bg-accent/10 border border-accent/20 px-4 py-1.5 rounded-full inline-block mb-2">
         Clinical Solutions
       </span>
-      <h2 class="text-4xl lg:text-5xl font-display font-bold text-gray-900 mt-1 mb-4">OUR SERVICES</h2>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-gray-900 mt-1 mb-4">OUR SERVICES</h2>
       <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
         A full range of precision-crafted dental restorations — engineered for natural aesthetics, marginal fit, and long-term durability.
       </p>
@@ -207,7 +232,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- 1. PFM CROWNS -->
-      <div class="service-card bg-white border border-gray-200/90 rounded-2xl p-7 flex flex-col justify-between shadow-sm hover:shadow-lg" data-aos="fade-up" data-aos-delay="0">
+      <div class="service-card bg-white border border-gray-200/90 rounded-2xl p-5 md:p-7 flex flex-col justify-between shadow-sm hover:shadow-lg" data-aos="fade-up" data-aos-delay="0">
         <div>
           <!-- Header with icon & badge -->
           <div class="flex items-center justify-between mb-4">
@@ -265,7 +290,7 @@
       </div>
 
       <!-- 2. ZIRCONIA (CAD/CAM) -->
-      <div class="service-card bg-white border border-gray-200/90 rounded-2xl p-7 flex flex-col justify-between shadow-sm hover:shadow-lg" data-aos="fade-up" data-aos-delay="60">
+      <div class="service-card bg-white border border-gray-200/90 rounded-2xl p-5 md:p-7 flex flex-col justify-between shadow-sm hover:shadow-lg" data-aos="fade-up" data-aos-delay="60">
         <div>
           <div class="flex items-center justify-between mb-4">
             <div class="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center">
@@ -304,7 +329,7 @@
       </div>
 
       <!-- 3. MONOLITHIC ZIRCON -->
-      <div class="service-card bg-white border border-gray-200/90 rounded-2xl p-7 flex flex-col justify-between shadow-sm hover:shadow-lg" data-aos="fade-up" data-aos-delay="120">
+      <div class="service-card bg-white border border-gray-200/90 rounded-2xl p-5 md:p-7 flex flex-col justify-between shadow-sm hover:shadow-lg" data-aos="fade-up" data-aos-delay="120">
         <div>
           <div class="flex items-center justify-between mb-4">
             <div class="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center">
@@ -344,7 +369,7 @@
       </div>
 
       <!-- 4. IMPLANT CROWNS -->
-      <div class="service-card bg-white border border-gray-200/90 rounded-2xl p-7 flex flex-col justify-between shadow-sm hover:shadow-lg" data-aos="fade-up" data-aos-delay="0">
+      <div class="service-card bg-white border border-gray-200/90 rounded-2xl p-5 md:p-7 flex flex-col justify-between shadow-sm hover:shadow-lg" data-aos="fade-up" data-aos-delay="0">
         <div>
           <div class="flex items-center justify-between mb-4">
             <div class="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center">
@@ -396,7 +421,7 @@
       </div>
 
       <!-- 5. FULL METAL -->
-      <div class="service-card bg-white border border-gray-200/90 rounded-2xl p-7 flex flex-col justify-between shadow-sm hover:shadow-lg" data-aos="fade-up" data-aos-delay="60">
+      <div class="service-card bg-white border border-gray-200/90 rounded-2xl p-5 md:p-7 flex flex-col justify-between shadow-sm hover:shadow-lg" data-aos="fade-up" data-aos-delay="60">
         <div>
           <div class="flex items-center justify-between mb-4">
             <div class="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center">
@@ -434,7 +459,7 @@
       </div>
 
       <!-- 6. SPLINT -->
-      <div class="service-card bg-white border border-gray-200/90 rounded-2xl p-7 flex flex-col justify-between shadow-sm hover:shadow-lg" data-aos="fade-up" data-aos-delay="120">
+      <div class="service-card bg-white border border-gray-200/90 rounded-2xl p-5 md:p-7 flex flex-col justify-between shadow-sm hover:shadow-lg" data-aos="fade-up" data-aos-delay="120">
         <div>
           <div class="flex items-center justify-between mb-4">
             <div class="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center">
@@ -479,7 +504,7 @@
       </div>
 
       <!-- 7. TEMPORARY CROWN -->
-      <div class="service-card bg-white border border-gray-200/90 rounded-2xl p-7 flex flex-col justify-between shadow-sm hover:shadow-lg" data-aos="fade-up" data-aos-delay="0">
+      <div class="service-card bg-white border border-gray-200/90 rounded-2xl p-5 md:p-7 flex flex-col justify-between shadow-sm hover:shadow-lg" data-aos="fade-up" data-aos-delay="0">
         <div>
           <div class="flex items-center justify-between mb-4">
             <div class="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center">
@@ -520,7 +545,7 @@
       </div>
 
       <!-- 8. MODEL PRINT -->
-      <div class="service-card bg-white border border-gray-200/90 rounded-2xl p-7 flex flex-col justify-between sm:col-span-2 lg:col-span-2 shadow-sm hover:shadow-lg" data-aos="fade-up" data-aos-delay="60">
+      <div class="service-card bg-white border border-gray-200/90 rounded-2xl p-5 md:p-7 flex flex-col justify-between md:col-span-2 lg:col-span-2 shadow-sm hover:shadow-lg" data-aos="fade-up" data-aos-delay="60">
         <div>
           <div class="flex items-center justify-between mb-4">
             <div class="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center">
@@ -574,14 +599,14 @@
 <!-- ═══════════════════════════════════════════════════
      ABOUT + STATS (Original Layout with Leaders & Heritage)
 ════════════════════════════════════════════════════ -->
-<section id="about" class="py-24 bg-white">
+<section id="about" class="py-14 md:py-24 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto">
 
       <!-- Text + stats -->
       <div data-aos="fade-right">
         <span class="text-primary font-semibold tracking-widest text-xs uppercase">Our Heritage & Story</span>
-        <h2 class="text-4xl lg:text-5xl font-display font-bold text-gray-900 mt-2 mb-6">Where Traditional Craftsmanship Meets Modern Dentistry</h2>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-gray-900 mt-2 mb-6">Where Traditional Craftsmanship Meets Modern Dentistry</h2>
         <p class="text-gray-600 leading-relaxed mb-4 text-base">
           Built on the trusted legacy of GANI Dental Lab since 2002. For over two decades, GANI Dental Lab has been a trusted partner to dental professionals, delivering restorations that combine precision, aesthetics, and reliability.
         </p>
@@ -685,32 +710,32 @@
 <!-- ═══════════════════════════════════════════════════
      GALLERY (Original Layout)
 ════════════════════════════════════════════════════ -->
-<section id="gallery" class="py-24 bg-surface">
+<section id="gallery" class="py-14 md:py-24 bg-surface">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <div class="text-center mb-16" data-aos="fade-up">
+    <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
       <span class="text-accent font-semibold tracking-widest text-xs uppercase">Our Work</span>
-      <h2 class="text-4xl lg:text-5xl font-display font-bold text-gray-900 mt-2 mb-4">OUR WORK (GALLERY)</h2>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-gray-900 mt-2 mb-4">OUR WORK (GALLERY)</h2>
       <p class="text-gray-500 max-w-xl mx-auto">Real cases, real transformations. Click any image to view full size.</p>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="gallery-grid">
-      <div class="gallery-item rounded-2xl h-64" data-aos="zoom-in" data-aos-delay="0" data-index="0">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4" id="gallery-grid">
+      <div class="gallery-item rounded-xl md:rounded-2xl h-44 md:h-64" data-aos="zoom-in" data-aos-delay="0" data-index="0">
         <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=600&q=80" alt="Smile transformation 1" />
       </div>
-      <div class="gallery-item rounded-2xl h-64" data-aos="zoom-in" data-aos-delay="60" data-index="1">
+      <div class="gallery-item rounded-xl md:rounded-2xl h-44 md:h-64" data-aos="zoom-in" data-aos-delay="60" data-index="1">
         <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80" alt="Dental veneers case" />
       </div>
-      <div class="gallery-item rounded-2xl h-64" data-aos="zoom-in" data-aos-delay="120" data-index="2">
+      <div class="gallery-item rounded-xl md:rounded-2xl h-44 md:h-64" data-aos="zoom-in" data-aos-delay="120" data-index="2">
         <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&q=80" alt="Implant case" />
       </div>
-      <div class="gallery-item rounded-2xl h-64" data-aos="zoom-in" data-aos-delay="0" data-index="3">
+      <div class="gallery-item rounded-xl md:rounded-2xl h-44 md:h-64" data-aos="zoom-in" data-aos-delay="0" data-index="3">
         <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80" alt="Lab prosthetics" />
       </div>
-      <div class="gallery-item rounded-2xl h-64" data-aos="zoom-in" data-aos-delay="60" data-index="4">
+      <div class="gallery-item rounded-xl md:rounded-2xl h-44 md:h-64" data-aos="zoom-in" data-aos-delay="60" data-index="4">
         <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=600&q=80" alt="Whitening result" />
       </div>
-      <div class="gallery-item rounded-2xl h-64" data-aos="zoom-in" data-aos-delay="120" data-index="5">
+      <div class="gallery-item rounded-xl md:rounded-2xl h-44 md:h-64" data-aos="zoom-in" data-aos-delay="120" data-index="5">
         <img src="https://images.unsplash.com/photo-1563461660947-507ef49e9c47?w=600&q=80" alt="Orthodontics case" />
       </div>
     </div>
@@ -722,12 +747,12 @@
 <!-- ═══════════════════════════════════════════════════
      CONTACT (Original Layout)
 ════════════════════════════════════════════════════ -->
-<section id="contact" class="py-24 bg-white">
+<section id="contact" class="py-14 md:py-24 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <div class="text-center mb-16" data-aos="fade-up">
+    <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
       <span class="text-primary font-semibold tracking-widest text-xs uppercase">Get In Touch</span>
-      <h2 class="text-4xl lg:text-5xl font-display font-bold text-gray-900 mt-2 mb-4">CONTACT US</h2>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-gray-900 mt-2 mb-4">CONTACT US</h2>
       <p class="text-gray-500 max-w-xl mx-auto">Fill in the form or call our laboratory directly for pickups and inquiries.</p>
     </div>
 
@@ -901,7 +926,7 @@
 <!-- ═══════════════════════════════════════════════════
      FOOTER (Original Layout)
 ════════════════════════════════════════════════════ -->
-<footer class="bg-gray-900 text-white py-16">
+<footer class="bg-gray-900 text-white py-10 md:py-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
 
